@@ -44,4 +44,19 @@ describe('UserRegistrationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create the user registration form', () => {
+    const userRegistrationForm = component.buildUserRegistrationForm();
+
+    expect(userRegistrationForm.controls.userName.value).toBeNull();
+    expect(userRegistrationForm.controls.userMail.value).toBeNull();
+    expect(userRegistrationForm.controls.userPassword.value).toBeNull();
+    expect(userRegistrationForm.controls.userPasswordConfirm.value).toBeNull();
+  });
+
+  it('should start invalid user registration form', () => {
+    const userRegistrationForm = component.buildUserRegistrationForm();
+
+    expect(userRegistrationForm.valid).toBeFalse();
+  });
 });
