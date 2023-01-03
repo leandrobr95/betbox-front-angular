@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="inner-margin-t-3">
+    <nz-card class="center v-size-3" [nzTitle]="cardTitle">
+        <ng-template #cardTitle>
+            <div class="txt-center">
+                <h2 nz-typography>Betbox</h2>
+            </div>
+        </ng-template>
+        <form nz-form [formGroup]="loginForm" (ngSubmit)="login()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe seu email">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="email" nz-input formControlName="emailUsuario" placeholder="Email" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe sua senha">
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
+                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="senhaUsuario" placeholder="Senha" />
+                    </nz-input-group>
+                    <ng-template #suffixTemplate>
+                        <span nz-icon *ngIf="passwordVisible" [nzType]="'eye-invisible'" (click)="passwordVisible = !passwordVisible" class="clickable"></span>
+                        <span nz-icon *ngIf="!passwordVisible" [nzType]="'eye'" (click)="passwordVisible = !passwordVisible" class="clickable"></span>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <button nz-button nzBlock [nzType]="'primary'">Login</button>
+            <div class="txt-center inner-margin-t-1">
+                <a>Cadastre-se</a>
+            </div>
+        </form>
+    </nz-card>
+</div>
