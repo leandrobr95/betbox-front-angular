@@ -8,19 +8,19 @@
         <form nz-form [formGroup]="loginForm" (ngSubmit)="login()">
             <nz-form-item>
                 <nz-form-control nzErrorTip="Informe seu email">
-                    <nz-input-group nzPrefixIcon="user">
+                    <nz-input-group nzPrefixIcon="mail">
                         <input type="email" nz-input formControlName="userMail" placeholder="Email" />
                     </nz-input-group>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
                 <nz-form-control nzErrorTip="Informe sua senha">
-                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
-                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="userPassword" placeholder="Senha" />
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="passwordViewIconTemplate">
+                        <input [type]="visiblePassword ? 'text' : 'password'" nz-input formControlName="userPassword" placeholder="Senha" />
                     </nz-input-group>
-                    <ng-template #suffixTemplate>
-                        <span nz-icon *ngIf="passwordVisible" [nzType]="'eye-invisible'" (click)="passwordVisible = !passwordVisible" class="clickable"></span>
-                        <span nz-icon *ngIf="!passwordVisible" [nzType]="'eye'" (click)="passwordVisible = !passwordVisible" class="clickable"></span>
+                    <ng-template #passwordViewIconTemplate>
+                        <span nz-icon *ngIf="visiblePassword" [nzType]="'eye-invisible'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
+                        <span nz-icon *ngIf="!visiblePassword" [nzType]="'eye'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
                     </ng-template>
                 </nz-form-control>
             </nz-form-item>

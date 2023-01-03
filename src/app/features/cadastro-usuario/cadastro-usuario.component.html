@@ -22,10 +22,10 @@
             </nz-form-item>
             <nz-form-item>
                 <nz-form-control nzErrorTip="Informe sua senha">
-                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="passwordViewIcon">
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="passwordViewIconTemplate">
                         <input [type]="visiblePassword ? 'text' : 'password'" nz-input formControlName="userPassword" placeholder="Senha" />
                     </nz-input-group>
-                    <ng-template #passwordViewIcon>
+                    <ng-template #passwordViewIconTemplate>
                         <span nz-icon *ngIf="visiblePassword" [nzType]="'eye-invisible'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
                         <span nz-icon *ngIf="!visiblePassword" [nzType]="'eye'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
                     </ng-template>
