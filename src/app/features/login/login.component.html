@@ -9,14 +9,14 @@
             <nz-form-item>
                 <nz-form-control nzErrorTip="Informe seu email">
                     <nz-input-group nzPrefixIcon="user">
-                        <input type="email" nz-input formControlName="emailUsuario" placeholder="Email" />
+                        <input type="email" nz-input formControlName="userMail" placeholder="Email" />
                     </nz-input-group>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
                 <nz-form-control nzErrorTip="Informe sua senha">
                     <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
-                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="senhaUsuario" placeholder="Senha" />
+                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="userPassword" placeholder="Senha" />
                     </nz-input-group>
                     <ng-template #suffixTemplate>
                         <span nz-icon *ngIf="passwordVisible" [nzType]="'eye-invisible'" (click)="passwordVisible = !passwordVisible" class="clickable"></span>
