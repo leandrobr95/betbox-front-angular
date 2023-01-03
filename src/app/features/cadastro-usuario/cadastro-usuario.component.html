@@ -1,0 +1,51 @@
+<div class="inner-margin-t-3">
+    <nz-card class="center v-size-3" [nzTitle]="cardTitle">
+        <ng-template #cardTitle>
+            <div class="txt-center">
+                <h2 nz-typography>Cadastrar usuário</h2>
+            </div>
+        </ng-template>
+        <form nz-form [formGroup]="userRegistrationForm" (ngSubmit)="registerUser()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe seu nome">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="userName" placeholder="Nome" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe seu email">
+                    <nz-input-group nzPrefixIcon="mail">
+                        <input type="email" nz-input formControlName="userMail" placeholder="Email" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe sua senha">
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="passwordViewIcon">
+                        <input [type]="visiblePassword ? 'text' : 'password'" nz-input formControlName="userPassword" placeholder="Senha" />
+                    </nz-input-group>
+                    <ng-template #passwordViewIcon>
+                        <span nz-icon *ngIf="visiblePassword" [nzType]="'eye-invisible'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
+                        <span nz-icon *ngIf="!visiblePassword" [nzType]="'eye'" (click)="visiblePassword = !visiblePassword" class="clickable"></span>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Confirme sua senha">
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="passwordConfirmationPreviewIconTemplate">
+                        <input [type]="visiblePasswordConfirm ? 'text' : 'password'" nz-input formControlName="userPasswordConfirm" placeholder="Confirme a senha" />
+                    </nz-input-group>
+                    <ng-template #passwordConfirmationPreviewIconTemplate>
+                        <span nz-icon *ngIf="visiblePasswordConfirm" [nzType]="'eye-invisible'" (click)="visiblePasswordConfirm = !visiblePasswordConfirm" class="clickable"></span>
+                        <span nz-icon *ngIf="!visiblePasswordConfirm" [nzType]="'eye'" (click)="visiblePasswordConfirm = !visiblePasswordConfirm" class="clickable"></span>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <button nz-button nzBlock [nzType]="'primary'">Cadastrar</button>
+            <div class="txt-center inner-margin-t-1">
+                <a [routerLink]="['/login']">Cancelar</a>
+            </div>
+        </form>
+    </nz-card>
+</div>

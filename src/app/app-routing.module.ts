@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'cadastro-usuario',
+    loadChildren: () => import('./features/cadastro-usuario/cadastro-usuario.module').then(m => m.CadastroUsuarioModule)
+  },
+  {
     path: '**',
     redirectTo: 'login'
   }
