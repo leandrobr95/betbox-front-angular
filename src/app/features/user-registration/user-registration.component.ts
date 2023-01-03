@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-cadastro-usuario',
-  templateUrl: './cadastro-usuario.component.html',
+  selector: 'app-user-registration',
+  templateUrl: './user-registration.component.html',
   styleUrls: []
 })
-export class CadastroUsuarioComponent implements OnInit {
+export class UserRegistrationComponent implements OnInit {
 
   userRegistrationForm!: FormGroup;
   visiblePassword!: boolean;

@@ -9,13 +9,13 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
-import { CadastroUsuarioRoutingModule } from './cadastro-usuario-routing.module';
-import { CadastroUsuarioComponent } from './cadastro-usuario.component';
+import { UserRegistrationRoutingModule } from './user-registration-routing.module';
+import { UserRegistrationComponent } from './user-registration.component';
 
 
 @NgModule({
   declarations: [
-    CadastroUsuarioComponent
+    UserRegistrationComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +28,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario.component';
     NzInputModule,
     NzCardModule,
 
-    CadastroUsuarioRoutingModule
+    UserRegistrationRoutingModule
   ]
 })
-export class CadastroUsuarioModule { }
+export class UserRegistrationModule { }
